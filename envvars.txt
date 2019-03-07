@@ -1,0 +1,16 @@
+COMPOSER_CARD=admin@origami-platform-network
+COMPOSER_NAMESPACES=never
+COMPOSER_AUTHENTICATION=false
+COMPOSER_MULTIUSER=false
+COMPOSER_DATASOURCES='{
+    "db": {
+        "name": "db",
+        "connector": "mongodb",
+        "host": "mongo"
+    }
+}'
+
+NETWORK=origami-platform-network
+NETWORK_ADMIN=admin@origami-platform-network
+REST_ADMIN=restadmin@origami-platform-network
+PEER_ADMIN=PeerAdmin@hlfv1

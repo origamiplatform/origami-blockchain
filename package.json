@@ -1,0 +1,34 @@
+{
+  "engines": {
+    "composer": "^0.20.5"
+  },
+  "name": "origami-platform-network",
+  "version": "0.1.0",
+  "description": "Origami Platform DLT",
+  "scripts": {
+    "build": "mkdir -p ./dist && composer archive create -t dir -n . -a ./dist/origami-platform-network.bna",
+    "start": "composer network start --networkName origami-platform-network --networkVersion $npm_package_version --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card",
+    "upgrade": "composer network upgrade -c PeerAdmin@hlfv1 -n origami-platform-network -V $npm_package_version",
+    "ping": "composer network ping --card admin@origami-platform-network"
+  },
+  "keywords": [
+    "composer",
+    "composer-network"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "composer-admin": "^0.20.5",
+    "composer-cli": "^0.20.5",
+    "composer-client": "^0.20.5",
+    "composer-common": "^0.20.5",
+    "composer-connector-embedded": "^0.20.5",
+    "composer-cucumber-steps": "^0.20.5",
+    "chai": "latest",
+    "chai-as-promised": "latest",
+    "cucumber": "^2.2.0",
+    "eslint": "latest",
+    "nyc": "latest",
+    "mkdirp": "latest",
+    "mocha": "latest"
+  }
+}
