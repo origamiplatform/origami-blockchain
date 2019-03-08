@@ -1,0 +1,3 @@
+Step1. Install PeerAdmin
+Step2. Build bna image
+Step3. Install Network

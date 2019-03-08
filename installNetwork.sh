@@ -1,1 +1,2 @@
-composer network install --card PeerAdmin@hlfv1 --archiveFile origami-platform-network.bna@0.0.1.bna
+
+composer network install --card PeerAdmin@hlfv1 --archiveFile ./dist/origami-platform-network.bna
