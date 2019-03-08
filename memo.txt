@@ -1,5 +1,6 @@
 Node: v8.12.0
 
 Step1. Create PeerAdmin (createPeerAdmin.sh)
-Step2. Build bna image (npm run build)
-Step3. Install Network (installNetwork.sh or updateNetwork.sh)
+Step2. Init Network (initNetwork.sh)
+Step3. Create RestServerAdmin (createRestServerAdmin.sh)
+Step4. Update Connection Config for Docker Network (updateConnectionConfig.sh)
