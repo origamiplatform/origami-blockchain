@@ -9,7 +9,8 @@
     "build": "mkdir -p ./dist && composer archive create -t dir -n . -a ./dist/origami-platform-network.bna",
     "start": "composer network start --networkName origami-platform-network --networkVersion $npm_package_version --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card",
     "upgrade": "composer network upgrade -c PeerAdmin@hlfv1 -n origami-platform-network -V $npm_package_version",
-    "ping": "composer network ping --card admin@origami-platform-network"
+    "ping": "composer network ping --card admin@origami-platform-network",
+    "log": "docker logs -f rest"
   },
   "keywords": [
     "composer",
