@@ -3,7 +3,7 @@
     "composer": "^0.20.5"
   },
   "name": "origami-platform-network",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Origami Platform DLT",
   "scripts": {
     "build": "mkdir -p ./dist && composer archive create -t dir -n . -a ./dist/origami-platform-network.bna",

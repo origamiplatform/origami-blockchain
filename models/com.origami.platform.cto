@@ -19,7 +19,6 @@ namespace com.origami.platform
  */
 abstract participant User identified by id {
   o String id
-  o String userId
   o String email
   o String name
 }
@@ -41,12 +40,10 @@ abstract asset Content identified by id {
 }
 
 asset Lectrue extends Content {
-  o String lectureId
   --> Course course
 }
 
 asset Course extends Content {
-  o String courseId
   o String category
   o Lectrue[] lectures optional
   --> Student[] enrolled
