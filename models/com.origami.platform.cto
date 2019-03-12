@@ -1,0 +1,72 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+namespace com.origami.platform
+
+/**
+ * Participants
+ */
+abstract participant User identified by id {
+  o String id
+  o String userId
+  o String email
+  o String name
+}
+
+participant Admin extends User {
+}
+
+participant Student extends User { 
+}
+
+/**
+ * Assets
+ */
+abstract asset Content identified by id {
+  o String id
+  o String name
+  --> Admin publisher
+  --> Student[] completed
+}
+
+asset Lectrue extends Content {
+  o String lectureId
+  --> Course course
+}
+
+asset Course extends Content {
+  o String courseId
+  o String category
+  o Lectrue[] lectures optional
+  --> Student[] enrolled
+}
+
+/**
+ * Transactions
+ */
+
+transaction EnrollToCourse {
+  --> Course course
+  --> Student student
+}
+
+transaction CompleteCourse {
+  --> Course course
+  --> Student student
+}
+
+transaction CompleteLecture {
+  --> Lectrue ectrue
+  --> Student student
+}
