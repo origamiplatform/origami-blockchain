@@ -17,16 +17,11 @@ namespace com.origami.platform
 /**
  * Participants
  */
-abstract participant User identified by id {
+participant User identified by id {
   o String id
   o String email
   o String name
-}
-
-participant Admin extends User {
-}
-
-participant Student extends User { 
+  o Boolean admin
 }
 
 /**
@@ -35,8 +30,8 @@ participant Student extends User {
 abstract asset Content identified by id {
   o String id
   o String name
-  --> Admin publisher
-  --> Student[] completed
+  --> User publisher
+  --> User[] completed
 }
 
 asset Lecture extends Content {
@@ -46,7 +41,7 @@ asset Lecture extends Content {
 asset Course extends Content {
   o String category
   o Lecture[] lectures optional
-  --> Student[] enrolled
+  --> User[] enrolled
 }
 
 /**
@@ -55,15 +50,15 @@ asset Course extends Content {
 
 transaction EnrollToCourse {
   --> Course course
-  --> Student student
+  --> User student
 }
 
 transaction CompleteCourse {
   --> Course course
-  --> Student student
+  --> User student
 }
 
 transaction CompleteLecture {
   --> Lecture ectrue
-  --> Student student
+  --> User student
 }
