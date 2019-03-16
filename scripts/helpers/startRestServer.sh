@@ -1,6 +1,13 @@
 
 #!/bin/bash
-source /root/origami-blockchain/envvars.txt
+{
+    source /root/origami-blockchain/envvars.txt
+} || {
+    source ../../envvars.txt
+} || {
+    source ../envvars.txt
+} 
+
 
 docker run \
     -d \
