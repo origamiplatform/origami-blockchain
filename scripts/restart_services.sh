@@ -1,4 +1,5 @@
 #!/bin/bash
+source /root/origami-blockchain/envvars.txt
 
 docker rm -f mongo
 docker rm -f playground

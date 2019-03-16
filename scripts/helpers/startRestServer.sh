@@ -1,6 +1,6 @@
-#!/bin/bash
 
-source ../../envvars.txt
+#!/bin/bash
+source /root/origami-blockchain/envvars.txt
 
 docker run \
     -d \
