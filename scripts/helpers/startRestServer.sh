@@ -1,5 +1,6 @@
-
 #!/bin/bash
+
+
 {
     source /root/origami-blockchain/envvars.txt
 } || {
