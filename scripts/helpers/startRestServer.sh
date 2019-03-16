@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./envvars.txt
+source ../../envvars.txt
 
 docker run \
     -d \
