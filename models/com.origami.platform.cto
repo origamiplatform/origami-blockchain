@@ -31,7 +31,7 @@ abstract asset Content identified by id {
   o String id
   o String name
   --> User publisher
-  --> User[] completed
+  --> User[] completed optional
 }
 
 asset Lecture extends Content {
@@ -41,7 +41,7 @@ asset Lecture extends Content {
 asset Course extends Content {
   o String category
   o Lecture[] lectures optional
-  --> User[] enrolled
+  --> User[] enrolled optional
 }
 
 /**
